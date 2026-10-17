@@ -4,50 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Florida State Roleplay | FLA</title>
-<style>
-:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
---bg:#ffffff;--surface:#fff7e6;--text:#2b1500;--muted:#6b5238;--accent:#f26a0a;--accent2:#ffc933;--border:#ffe2b0;--herotext:#2b1500}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:3px solid var(--accent2)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:12px}
-.logo{font-weight:800;letter-spacing:.04em}.logo span{color:var(--accent)}
-nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:.92rem;color:var(--muted);overflow-x:auto;white-space:nowrap}
-nav ul a:hover{color:var(--accent)}
-.navbtn{background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px;font-weight:700;font-size:.88rem;white-space:nowrap}
-.hero{background:linear-gradient(160deg,#ffe066,#ffb52e 45%,#f26a0a);color:var(--herotext);padding:84px 0 96px;text-align:center}
-.hero h1{font-size:clamp(2.2rem,7vw,4rem);line-height:1.05;margin:0 0 12px;font-weight:900}
-.hero p{max-width:620px;margin:0 auto 28px;font-size:1.1rem}
-.tag{display:inline-block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;background:#fff;padding:5px 14px;border-radius:99px;margin-bottom:18px;font-weight:700;color:var(--accent)}
-.btn{display:inline-block;padding:16px 34px;border-radius:12px;font-weight:800;font-size:1.15rem;background:#fff;color:#c2500a;box-shadow:0 6px 0 rgba(43,21,0,.25);transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
-.note{margin-top:18px;font-size:.95rem;font-weight:600}
-section{padding:64px 0}
-h2{font-size:1.8rem;margin:0 0 8px}
-.sub{color:var(--muted);margin:0 0 28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.card{background:#fff;border:2px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:6px;transition:border-color .15s,transform .15s}
-a.card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.card h3{margin:0;font-size:1.1rem}.card p{margin:0;color:var(--muted);font-size:.93rem}
-.card .go{margin-top:auto;padding-top:10px;color:var(--accent);font-weight:700;font-size:.9rem}
-.ico{font-size:1.8rem}
-.num{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
-.alt{background:var(--surface);border-block:1px solid var(--border)}
-.cta{background:var(--accent);color:#fff;text-align:center}
-.cta .btn{background:#fff;color:#c2500a}
-.quote{text-align:center;font-style:italic;color:var(--muted)}
-footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.88rem;border-top:3px solid var(--accent2)}
-</style>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav><div class="wrap"><div class="logo">FLA<span>.</span></div>
+<nav><div class="wrap"><div class="logo"><img data-img="fla" alt="FLA logo">FLA<span>.</span></div>
 <ul><li><a href="#about">About</a></li><li><a href="#departments">Departments</a></li><li><a href="#staff">Staff</a></li><li><a href="#join">How to Join</a></li></ul>
 <a class="navbtn" href="https://www.roblox.com/communities/1003827405/FLA-Florida-State-RP" target="_blank" rel="noopener">Join Roblox Group</a></div></nav>
 
 <header class="hero"><div class="wrap">
+<img class="hero-logo" data-img="fla" alt="Florida State Roleplay logo">
 <div class="tag">ER:LC Roleplay Community</div>
 <h1>Florida State Roleplay</h1>
 <p>Where the heat is high and the Sunshine State comes alive! Better roleplay starts here.</p>
@@ -68,15 +34,15 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.88rem;bord
 <h2>Departments</h2>
 <p class="sub">We currently offer 2 departments for players to apply to and roleplay as.</p>
 <div class="grid">
-<div class="card"><div class="ico">🛡️</div><h3>Miami Law Enforcement</h3><p>Patrol, pursue and protect. Enforce the law across Miami and keep the community safe.</p></div>
-<div class="card"><div class="ico">🚒</div><h3>Miami Fire Rescue</h3><p>Respond to emergencies and save lives when every second counts.</p></div>
+<div class="card"><img class="card-logo" data-img="mle" alt="Miami Law Enforcement logo"><h3>Miami Law Enforcement</h3><p>Patrol, pursue and protect. Enforce the law across Miami and keep the community safe.</p></div>
+<div class="card"><img class="card-logo" data-img="mfr" alt="Miami Fire Rescue logo"><h3>Miami Fire Rescue</h3><p>Respond to emergencies and save lives when every second counts.</p></div>
 </div></div></section>
 
 <section id="staff"><div class="wrap">
 <h2>Our Staff Team</h2>
 <p class="sub">The people who keep Florida State Roleplay fair, fun and running smoothly.</p>
 <div class="grid">
-<div class="card"><div class="ico">⚖️</div><h3>Fair Moderation</h3><p>Staff enforce the community regulations consistently so everyone gets a good roleplay experience.</p></div>
+<div class="card"><img class="card-logo" data-img="staff" alt="FLA Staff logo"><h3>Fair Moderation</h3><p>Staff enforce the community regulations consistently so everyone gets a good roleplay experience.</p></div>
 <div class="card"><div class="ico">🤝</div><h3>Player Support</h3><p>Questions, reports or issues? Our staff are here to help you out.</p></div>
 <div class="card"><div class="ico">📋</div><h3>Trained &amp; Held Accountable</h3><p>Every staff member follows set expectations, procedures and policies.</p></div>
 </div></div></section>
@@ -88,6 +54,7 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.88rem;bord
 <div class="card"><div class="num">1</div><h3>Join the ROBLOX group</h3><p>This is the main step. Hit the button below to join our Main Group on Roblox.</p></div>
 <div class="card"><div class="num">2</div><h3>Jump into ER:LC</h3><p>Join a Florida State Roleplay session and start your story.</p></div>
 <div class="card"><div class="num">3</div><h3>Follow us</h3><p>Stay up to date on our <a href="https://tiktok.com/@yz.peezo" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">TikTok</a> and <a href="https://www.youtube.com/channel/UCi4n0w_L0goA0u0T6j22Cig" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">YouTube</a>.</p></div>
+<a class="card" href="https://www.roblox.com/communities/426830372/FLA-Whitelisted" target="_blank" rel="noopener"><img class="card-logo" data-img="wl" alt="FLA Whitelisted logo"><h3>Whitelisted Group</h3><p>For whitelisted members and department applicants.</p><span class="go">View on Roblox →</span></a>
 </div></div></section>
 
 <section class="cta"><div class="wrap">
@@ -98,5 +65,8 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.88rem;bord
 
 <footer><div class="wrap"><p class="quote">“Better Roleplay Starts Here.”</p>
 <p>© Florida State Roleplay. Not affiliated with Roblox Corporation or Emergency Response: Liberty County.</p></div></footer>
+
+<script src="images.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
