@@ -1,3 +1,11 @@
+// Fill in logos from images.js (hides any image with no data)
+document.querySelectorAll('img[data-img]').forEach((img) => {
+  const url = (window.IMAGES || {})[img.dataset.img];
+  if (url) img.src = url; else img.hidden = true;
+});
+const icon = document.querySelector('link[rel="icon"]');
+if (icon && window.IMAGES && window.IMAGES.fla) icon.href = window.IMAGES.fla;
+
 // Fade cards in as they scroll into view
 const cards = document.querySelectorAll('.card');
 if ('IntersectionObserver' in window) {
