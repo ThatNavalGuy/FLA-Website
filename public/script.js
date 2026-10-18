@@ -35,3 +35,17 @@ if ('IntersectionObserver' in window && !reduce) {
     io.observe(el);
   });
 }
+
+// Ownership message bubble
+const msg = document.getElementById('msg');
+const msgBtn = document.getElementById('msgBtn');
+const msgPanel = document.getElementById('msgPanel');
+const setMsg = (open) => {
+  msg.classList.toggle('open', open);
+  msgBtn.setAttribute('aria-expanded', open);
+  msgPanel.setAttribute('aria-hidden', !open);
+};
+msgBtn.addEventListener('click', () => setMsg(!msg.classList.contains('open')));
+document.getElementById('msgClose').addEventListener('click', () => setMsg(false));
+document.addEventListener('click', (e) => { if (!msg.contains(e.target)) setMsg(false); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMsg(false); });
