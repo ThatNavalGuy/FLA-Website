@@ -6,7 +6,7 @@ document.querySelectorAll('img[data-img]').forEach((img) => {
 const icon = document.querySelector('link[rel="icon"]');
 if (icon && window.IMAGES && window.IMAGES.fla) icon.href = window.IMAGES.fla;
 
-// Slide things in from the left as they appear on screen
+// Rise in from the bottom as things appear on screen
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if ('IntersectionObserver' in window && !reduce) {
   const targets = document.querySelectorAll(
@@ -16,22 +16,21 @@ if ('IntersectionObserver' in window && !reduce) {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
       const el = e.target;
-      el.classList.add('in');
       io.unobserve(el);
-      // Remove animation classes afterwards so hover effects work normally
-      const wait = parseFloat(el.style.transitionDelay) || 0;
-      setTimeout(() => {
+      el.classList.add('in');
+      // Clean up when finished so hover effects work normally
+      el.addEventListener('animationend', () => {
         el.classList.remove('reveal', 'in');
-        el.style.transitionDelay = '';
-      }, 800 + wait);
+        el.style.animationDelay = '';
+      }, { once: true });
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   const seen = new Map();
   targets.forEach((el) => {
     const n = seen.get(el.parentElement) || 0;
     seen.set(el.parentElement, n + 1);
-    el.style.transitionDelay = Math.min(n * 90, 360) + 'ms';
+    el.style.animationDelay = Math.min(n * 80, 320) + 'ms';
     el.classList.add('reveal');
     io.observe(el);
   });
