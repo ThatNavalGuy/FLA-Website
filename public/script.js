@@ -6,7 +6,7 @@ document.querySelectorAll('img[data-img]').forEach((img) => {
 const icon = document.querySelector('link[rel="icon"]');
 if (icon && window.IMAGES && window.IMAGES.fla) icon.href = window.IMAGES.fla;
 
-// Mobile sidebar open/close
+// Mobile menu
 const side = document.getElementById('side');
 const scrim = document.getElementById('scrim');
 const setMenu = (open) => {
@@ -17,34 +17,18 @@ document.getElementById('burger').addEventListener('click', () => setMenu(!side.
 scrim.addEventListener('click', () => setMenu(false));
 side.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
-// Fade cards in as they scroll into view
-const cards = document.querySelectorAll('.card, .feature, .pitch');
+// Highlight the menu link for the section on screen
+const links = [...document.querySelectorAll('.side nav a[href^="#"]')];
 if ('IntersectionObserver' in window) {
-  const reveal = new IntersectionObserver((entries) => {
+  const spy = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
-        e.target.classList.add('show');
-        reveal.unobserve(e.target);
+        links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
       }
     });
-  }, { threshold: 0.12 });
-  cards.forEach((c, i) => {
-    c.classList.add('reveal');
-    c.style.transitionDelay = (i % 3) * 80 + 'ms';
-    reveal.observe(c);
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  links.forEach((a) => {
+    const s = document.querySelector(a.getAttribute('href'));
+    if (s) spy.observe(s);
   });
 }
-
-// Highlight the sidebar link for the section you're viewing
-const links = [...document.querySelectorAll('.side nav a[href^="#"]')];
-const spy = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) {
-      links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
-    }
-  });
-}, { rootMargin: '-40% 0px -55% 0px' });
-links.forEach((a) => {
-  const s = document.querySelector(a.getAttribute('href'));
-  if (s) spy.observe(s);
-});
